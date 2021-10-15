@@ -19,6 +19,12 @@ Link to site : [Click Here](https://f1u7r2y9.github.io/3nplus1/)
 
 If you have any feedback, please reach out to me at exlphy@gmail.com
 
+## Lessons
+
+- Mathematics is not easy.
+- 
+- (Simplest Math problem no one can solve.)
+
 ## Authors
 
 - [@F1U7R2Y9](https://github.com/F1U7R2Y9/)
@@ -28,8 +34,12 @@ Learning
 
 ## References
 
+-[Wikipedia(wikiwand)](https://www.wikiwand.com/en/Collatz_conjecture)
+
 -[R markdown into rendered output](https://www.earthdatascience.org/courses/earth-analytics/document-your-science/knit-rmarkdown-document-to-pdf/)
 
 -[Google Charts](https://developers.google.com/chart/interactive/docs/gallery/linechart)
 
--[Wikipedia(wikiwand)](https://www.wikiwand.com/en/Collatz_conjecture)
+-[Veritasium Video](https://www.youtube.com/watch?v=094y1Z2wpJg)
+
+-[An Annotated Bibliography](https://arxiv.org/pdf/math/0309224.pdf)
