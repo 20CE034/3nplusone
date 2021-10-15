@@ -8,3 +8,5 @@ Link to site : [Click Here](https://f1u7r2y9.github.io/3nplus1/)
 -[R markdown into rendered output](https://www.earthdatascience.org/courses/earth-analytics/document-your-science/knit-rmarkdown-document-to-pdf/)
 
 -[Google Charts](https://developers.google.com/chart/interactive/docs/gallery/linechart)
+
+-[Wikipedia(wikiwand)](https://www.wikiwand.com/en/Collatz_conjecture)
