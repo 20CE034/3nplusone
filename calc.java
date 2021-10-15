@@ -3,14 +3,12 @@ import java.util.*;
 public class calc{
     
     void logic_stuff(){
-        int i=0;
+        long i=0;
         int cc=0;
         Scanner sc=new Scanner(System.in);
         long n;
         n=sc.nextInt();  
-        
-        for(i=0;i<100;i++){
-            
+        for(i=0;i<20000;i++){
         if(n!=1){
         if(n%2==0){
             n=n/2;

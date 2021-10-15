@@ -4,13 +4,12 @@
     font-weight:bolder;
     margin: 0px;
     overflow: auto;
-    padding-right:500px;
-    padding-left:500px;
     /* color: darkslategrey; */
 }
 
-.headbg{
-    background-color: rgba(128, 128, 128, 0.349);
+.hline{
+    margin-top:-10px;
+    margin-bottom:20px;
 }
 
 .btn{
@@ -42,7 +41,7 @@
    #leftbox{
     float:left; 
     width:30%;
-    height:800px;
+    height:1000px;
     border-spacing:0 0;
    
   }
@@ -53,4 +52,12 @@
     height:1000px;
     border-spacing:0 0;
     
+}
+.vertLine {
+	width: 0px;
+	border: 0.5px solid #000000;
+	height: 1000px;
+	position: absolute; /* I manually centered this since margin auto doesn't automatically place it */
+	left: 435px;
+  bottom:initial;
 }
