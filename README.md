@@ -22,7 +22,7 @@ If you have any feedback, please reach out to me at exlphy@gmail.com
 ## Lessons
 
 - Mathematics is not easy.
-- 
+- Programming with math is fun!
 - (Simplest Math problem no one can solve.)
 
 ## Authors
