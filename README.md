@@ -1,5 +1,5 @@
   
-![Logo](https://cdn.discordapp.com/attachments/794818958686552145/898590999553638470/headerimg.png)
+![Logo](./Images/logo.png)
 
     
 # 3nplus1
