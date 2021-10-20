@@ -1,8 +1,7 @@
   
-![Logo](https://cdn.discordapp.com/attachments/794818958686552145/900413007216132106/unknown.png)
+![Logo](https://cdn.discordapp.com/attachments/794818958686552145/900413224934080542/logo.png)
 
-    
-# 3nplus1
+
 The Collatz Conjecture is (not) the simplest math problem i am about to code.
 
 Link to site : [Click Here](https://f1u7r2y9.github.io/3nplus1/) 
