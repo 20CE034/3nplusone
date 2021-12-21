@@ -26,7 +26,7 @@ If you have any feedback, please reach out to me at exlphy@gmail.com
 
 - (Simplest Math problem no one can solve.)
 
-- followed by NaF principal [Link](https://m1a7x2y9.github.io/NF/)
+- followed by [NaF](https://m1a7x2y9.github.io/NF/) principal 
 
 ## Authors
 
