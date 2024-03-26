@@ -1,136 +1,104 @@
-var run = document.getElementById("run");
+// Get the "Run" button element
+var runButton = document.getElementById("run");
 
-run.addEventListener("click", function (e) {
-  e.preventDefault();
+// Add event listener for the "Run" button click
+runButton.addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent the default form submission behavior
 
-  var stdin = document.getElementById("stdin");
-  var output = document.getElementById("output");
+  // Get the input element for the number
+  var numberInput = document.getElementById("stdin");
 
-  output.innerHTML = "Loading...";
+  // Get the output element where the sequence will be displayed
+  var outputElement = document.getElementById("output");
 
-  console.log(stdin.value);
-  
-  var n = parseInt(stdin.value);
-  var cc = 0;
-  var sequence = '';
+  // Display a loading message
+  outputElement.innerHTML = "Loading...";
 
-  while (n !== 1 && cc < 100) {
-    if (n % 2 === 0) {
-      n = n / 2;
-    } else {
-      n = 3 * n + 1;
-    }
-    sequence += n + '<br>';
-    cc++;
-  }
+  // Parse the input number
+  var inputNumber = parseInt(numberInput.value);
 
-  sequence += "<br>Levels: " + cc;
-  output.innerHTML = sequence;
+  // Generate the sequence based on the input number
+  var sequence = generateSequence(inputNumber);
 
-  // No need for the credit calculation part as it's not relevant here.
+  // Display the sequence
+  outputElement.innerHTML = sequence;
+
+  // Draw the chart based on the generated sequence
+  drawChart(sequence);
 });
 
+// Function to generate the sequence based on the Collatz conjecture
+function generateSequence(inputNumber) {
+  var sequence = "";
+  var currentNumber = inputNumber;
+  var stepCount = 0;
 
-//16
-google.charts.load("current", { packages: ["corechart", "line"] });
-google.charts.setOnLoadCallback(drawBackgroundColor);
-
-function drawBackgroundColor() {
-  var data = new google.visualization.DataTable();
-  data.addColumn("number", "X");
-  data.addColumn("number", "N value");
-
-  data.addRows([
-    [0, 0],
-    [1, 1],
-    [2, 2],
-    [4, 3],
-    [8, 4],
-    [16, 5],
-  ]);
-
-  var options = {
-    hAxis: {
-      title: "N",
-    },
-    vAxis: {
-      title: "Y",
-    },
-    backgroundColor: "white",
-  };
-
-  var chart = new google.visualization.LineChart(
-    document.getElementById("chart_div")
-  );
-  chart.draw(data, options);
-}
-
-//19
-google.charts.load("current", { packages: ["corechart", "line"] });
-google.charts.setOnLoadCallback(drawBackgroundColor1);
-
-function drawBackgroundColor1() {
-  var data = new google.visualization.DataTable();
-  data.addColumn("number", "X");
-  data.addColumn("number", "N value");
-
-  data.addRows([
-    [0, 0],
-    [1, 1],
-    [2, 2],
-    [4, 3],
-    [8, 4],
-    [16, 5],
-    [5, 6],
-    [10, 7],
-    [20, 8],
-    [40, 9],
-    [13, 10],
-    [26, 11],
-    [52, 12],
-    [17, 13],
-    [34, 14],
-    [11, 15],
-    [22, 16],
-    [44, 17],
-    [88, 18],
-    [29, 19],
-    [58, 20],
-    [19, 21],
-  ]);
-
-  var options = {
-    hAxis: {
-      title: "N",
-    },
-    vAxis: {
-      title: "Y",
-    },
-    backgroundColor: "white",
-  };
-
-  var chart = new google.visualization.LineChart(
-    document.getElementById("chart_div1")
-  );
-  chart.draw(data, options);
-}
-
-(function () {
-  var cors_api_host = "cors-anywhere.herokuapp.com";
-  var cors_api_url = "https://" + cors_api_host + "/";
-  var slice = [].slice;
-  var origin = window.location.protocol + "//" + window.location.host;
-  var open = XMLHttpRequest.prototype.open;
-  XMLHttpRequest.prototype.open = function () {
-    var args = slice.call(arguments);
-    var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-    if (
-      targetOrigin &&
-      targetOrigin[0].toLowerCase() !== origin &&
-      targetOrigin[1] !== cors_api_host
-    ) {
-      args[1] = cors_api_url + args[1];
+  // Generate the sequence until reaching 1 or the step limit
+  while (currentNumber !== 1 && stepCount < 100) {
+    if (currentNumber % 2 === 0) {
+      currentNumber = currentNumber / 2;
+    } else {
+      currentNumber = 3 * currentNumber + 1;
     }
-    return open.apply(this, args);
-  };
-})();
+    sequence += currentNumber + "<br>";
+    stepCount++;
+  }
+
+  // Add information about the step count to the sequence
+  sequence += "<br>Step Count: " + stepCount;
+
+  return sequence;
+}
+
+// Function to draw the chart based on the generated sequence
+function drawChart(sequence) {
+  // Load the Google Charts library
+  google.charts.load("current", { packages: ["corechart", "line"] });
+
+  // Callback function when Google Charts library is loaded
+  google.charts.setOnLoadCallback(function () {
+    // Create a DataTable to hold the chart data
+    var data = new google.visualization.DataTable();
+    data.addColumn("number", "Step");
+    data.addColumn("number", "Value");
+
+    // Extract numbers from the sequence
+    var numbers = sequence.match(/\d+/g);
+
+    // Populate the DataTable with the sequence data
+    var rows = [];
+    for (var i = 0; i < numbers.length; i++) {
+      var step = i;
+      var value = parseInt(numbers[i]);
+      rows.push([step, value]);
+    }
+    data.addRows(rows);
+
+    // Set options for the chart
+    var options = {
+      hAxis: {
+        title: "Step",
+        viewWindowMode: "explicit",
+        viewWindow: {
+          min: 0,
+          max: rows.length-1, // Adjust maximum step value
+        },
+        height: 700, 
+      },
+      vAxis: {
+        title: "Value",
+        height: 700, 
+      },
+      backgroundColor: "white",
+    };
+
+    // Select the chart container element
+    var chartContainer = document.getElementById("chart_div");
+
+    // Create a new LineChart instance
+    var chart = new google.visualization.LineChart(chartContainer);
+
+    // Draw the chart with the provided data and options
+    chart.draw(data, options);
+  });
+}

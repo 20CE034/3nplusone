@@ -1,5 +1,5 @@
-  
-![Logo](Images\logo.png)
+
+![Images\logo.png](https://github.com/20CE034/3nplusone/blob/4878e0b28da23c09e0dccc4d6026fdab18bd358e/Images/logo.png)
 
 
 The Collatz Conjecture is (not) the simplest math problem i am about to code.
