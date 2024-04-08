@@ -30,7 +30,7 @@ If you have any feedback, please reach out to me at exlphy@gmail.com
 
 ## Authors
 
-- [@F1U7R2Y9](https://github.com/F1U7R2Y9/)
+- [Dev Gundalia](https://github.com/20CE034/)
 
 ## 🚀 About Me
 Learning
